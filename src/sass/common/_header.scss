@@ -1,0 +1,183 @@
+h1{
+    display: none;
+}
+
+nav{
+    position: relative;
+    width:100%;
+}
+
+nav ul{
+    margin: 0 auto;
+    max-width:1200px;
+    text-align: center;
+}
+
+nav li{
+    margin:0 25px;
+    display: inline-block; 
+    vertical-align: middle;
+
+    @include rwd($tab){
+        display: none;
+    }
+}
+
+
+nav li a{
+    display:inline-block;
+    font-size:1.125*$baseFz;
+    color:$keyBlack;
+    position: relative;
+
+    &:hover{
+        cursor: pointer;
+
+        &::after{
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 10px;
+            background-color: $keyOrange;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: .5;
+        }
+    }
+}
+
+/* LOGO */
+nav li.logo{
+    width: 100px;
+
+    @include rwd($tab){
+        display: inline-block;
+    }
+}
+
+li.logo a:hover::after{
+    display: none;
+}
+
+.product.on,.blog.on,.shop.on,.memberCenter.on{
+    display: block;
+    position: absolute;
+    left: 38%;
+}
+
+.product.on{
+    top: 150%;
+}
+
+.blog.on{
+    top: 200%;
+}
+
+.shop.on{
+    top: 250%;
+}
+
+.memberCenter.on{
+    top: 300%;
+}
+
+header.on{
+    height: 100vh;
+}
+
+
+
+/* cart */
+nav li.cart{
+    display:inline-block;
+    position:absolute;
+    bottom:40px;
+    right: 15%;    
+
+    .countNum{
+        color: $h3Before;
+        color: $keyBlack;
+        position: absolute;
+        left: 15px;
+        top: -10px;
+        background-color: $keyOrange;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+    }
+}
+
+.shopping-cart{
+    color: $keyGray;
+    font-size: 1.75rem;
+
+    &:hover{
+        cursor: pointer;
+        color: $keyOrange;
+    }
+}
+
+/* hamburger */
+nav .hamburger-icon{
+    width: 42px;
+    height: 42px;
+    margin: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: none;
+
+
+    @include rwd($tab){
+        display: inline-block;
+        position: absolute;
+        left: 5%;
+        top: 20px;
+        z-index: 2;
+    }
+}
+
+.hamburger-icon .hr{
+    display: inline-block;
+    width: 80%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: $keyGray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all linear .2s;
+}
+
+.hamburger-icon .hr.top{
+    top: 25%;
+}
+.hamburger-icon .hr.bottom{
+    top: 75%;
+}
+
+// hamburger on
+.hamburger-icon.on .hr.top{
+    transform-origin: top left;
+    left: 8px;
+    top: 10px;
+    transform: rotate(45deg);
+    background-color: $keyGray;
+}
+
+.hamburger-icon.on .hr.middle{
+    display: none;
+}
+.hamburger-icon.on .hr.bottom{
+    transform-origin: top left;
+    top: auto;
+    left: 4px;
+    bottom: 4px;
+    transform: rotate(-45deg);
+    background-color: $keyGray;
+}

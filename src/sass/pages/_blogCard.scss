@@ -1,0 +1,26 @@
+@import "../common/variables";
+
+.textOverFlow{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.blogContainer{
+    display: flex;
+    justify-content: space-between;
+
+    @include rwd($tab){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+}
+
+.blogContainer>div{
+    margin: 20px 0;
+}

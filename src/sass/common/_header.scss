@@ -11,15 +11,30 @@ nav ul{
     margin: 0 auto;
     max-width:1200px;
     text-align: center;
+    position: relative;
+}
+
+nav ul.on::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: calc(100vh - 109.234px);
+    position: absolute;
+    top: 109.234px;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
 }
 
 nav li{
     margin:0 25px;
     display: inline-block; 
     vertical-align: middle;
+    z-index: 2;
 
     @include rwd($tab){
         display: none;
+        
     }
 }
 
@@ -51,6 +66,7 @@ nav li a{
 /* LOGO */
 nav li.logo{
     width: 100px;
+    z-index: 2;
 
     @include rwd($tab){
         display: inline-block;
@@ -64,7 +80,9 @@ li.logo a:hover::after{
 .product.on,.blog.on,.shop.on,.memberCenter.on{
     display: block;
     position: absolute;
-    left: 38%;
+    left: 50%;
+    transform: translateX(-80%);
+    z-index: 3;
 }
 
 .product.on{
@@ -83,9 +101,6 @@ li.logo a:hover::after{
     top: 300%;
 }
 
-header.on{
-    height: 100vh;
-}
 
 
 
@@ -93,8 +108,8 @@ header.on{
 nav li.cart{
     display:inline-block;
     position:absolute;
-    bottom:40px;
-    right: 15%;    
+    top:40px;
+    right: 5%;    
 
     .countNum{
         color: $h3Before;

@@ -1,0 +1,26 @@
+@import "../common/variables";
+
+.doubleArrow{
+    color: $h3Before;
+    font-size: 1.75rem;
+    transform: rotate(30deg);
+}
+.title{
+    margin-top: 80px;
+    margin-bottom: 50px;
+
+    @include rwd($cell){
+        margin-left: 90px;
+    }
+
+    @include rwd($phone){
+        margin-left: 12.5px;
+    }
+
+}
+
+.title h3{
+    font-size:24px;
+    color:$keyGray;
+    display: inline-block;
+}

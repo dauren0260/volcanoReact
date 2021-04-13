@@ -1,0 +1,163 @@
+@import "../common/variables";
+
+// carousel
+.splide__arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0;
+    background: transparent
+}
+
+.splide__arrow svg {
+    width: 2.5em;
+    height: 2.5em;
+    fill: $keyOrange;
+    transition: fill .2s linear
+}
+
+.splide__arrow:hover {
+    cursor: pointer
+}
+
+.splide__arrow:hover svg {
+    fill: #ffc078;
+}
+
+.splide__arrow:focus {
+    outline: none
+}
+
+.splide__arrow--prev {
+    left: 1em
+}
+
+.splide__arrow--prev svg {
+    transform: scaleX(-1)
+}
+
+.splide__arrow--next {
+    right: 1em
+}
+
+.splide__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: .5em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0
+}
+
+.splide__pagination__page {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 0;
+    transition: all .2s linear;
+    border: none
+}
+
+.splide__pagination__page.is-active {
+    transform: scale(1.4);
+    background: $keyOrange;
+}
+
+.splide__pagination__page:hover {
+    cursor: pointer;
+    background: #ffc078;
+}
+
+.splide__pagination__page:focus {
+    outline: none
+}
+
+.splide__progress__bar {
+    width: 0;
+    height: 3px;
+    background: $keyOrange;
+}
+
+.splide__spinner {
+    border: 2px solid $keyOrange;
+    border-left-color: transparent
+}
+
+.splide--nav>.splide__track>.splide__list>.splide__slide {
+    border: 3px solid transparent;
+    cursor: pointer;
+    opacity: .7
+}
+
+.splide--nav>.splide__track>.splide__list>.splide__slide.is-active {
+    border-color: $keyOrange;
+    opacity: 1
+}
+
+.splide--nav>.splide__track>.splide__list>.splide__slide:focus {
+    outline: none
+}
+
+.splide--rtl>.splide__arrows .splide__arrow--prev,
+.splide--rtl>.splide__track>.splide__arrows .splide__arrow--prev {
+    right: 1em;
+    left: auto
+}
+
+.splide--rtl>.splide__arrows .splide__arrow--prev svg,
+.splide--rtl>.splide__track>.splide__arrows .splide__arrow--prev svg {
+    transform: scaleX(1)
+}
+
+.splide--rtl>.splide__arrows .splide__arrow--next,
+.splide--rtl>.splide__track>.splide__arrows .splide__arrow--next {
+    left: 1em;
+    right: auto
+}
+
+.splide--rtl>.splide__arrows .splide__arrow--next svg,
+.splide--rtl>.splide__track>.splide__arrows .splide__arrow--next svg {
+    transform: scaleX(-1)
+}
+
+.splide--ttb>.splide__arrows .splide__arrow,
+.splide--ttb>.splide__track>.splide__arrows .splide__arrow {
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.splide--ttb>.splide__arrows .splide__arrow--prev,
+.splide--ttb>.splide__track>.splide__arrows .splide__arrow--prev {
+    top: 1em
+}
+
+.splide--ttb>.splide__arrows .splide__arrow--prev svg,
+.splide--ttb>.splide__track>.splide__arrows .splide__arrow--prev svg {
+    transform: rotate(-90deg)
+}
+
+.splide--ttb>.splide__arrows .splide__arrow--next,
+.splide--ttb>.splide__track>.splide__arrows .splide__arrow--next {
+    top: auto;
+    bottom: 1em
+}
+
+.splide--ttb>.splide__arrows .splide__arrow--next svg,
+.splide--ttb>.splide__track>.splide__arrows .splide__arrow--next svg {
+    transform: rotate(90deg)
+}
+
+.splide--ttb>.splide__pagination {
+    display: flex;
+    flex-direction: column;
+    bottom: 50%;
+    left: auto;
+    right: .5em;
+    transform: translateY(50%)
+}
+
